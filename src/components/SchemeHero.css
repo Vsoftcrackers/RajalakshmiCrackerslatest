@@ -1,0 +1,33 @@
+/* Container for the hero section */
+.scheme-hero-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Optional background color */
+   
+  }
+  
+  /* Image styling to make it responsive */
+  .scheme-hero-image {
+    width: 100%;
+    max-width: 1365px;
+    height: auto;
+    border-radius: 10px; /* Optional for rounded corners */
+    object-fit: cover; /* Ensures the image fills the container properly */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for shadow effect */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .scheme-hero-container {
+     
+    }
+  
+    .scheme-hero-image {
+      border-radius: 5px; /* Adjust radius for smaller devices */
+    }
+  }
+  

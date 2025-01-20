@@ -1,0 +1,42 @@
+.spinner-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: background to make it more noticeable */
+}
+
+.spinner {
+  width: 120px; /* Default size for larger screens */
+  animation: rotate 2s linear infinite, fade 1s ease-in-out infinite; /* Combine rotate and fade animations */
+}
+
+/* Keyframe for fading */
+@keyframes fade {
+  0% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0.5; /* Half visible */
+  }
+  100% {
+    opacity: 1; /* Fully visible again */
+  }
+}
+
+/* Keyframe for horizontal rotation (rotateY for side-to-side movement) */
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg); /* Initial position */
+  }
+  100% {
+    transform: rotateY(360deg); /* Full rotation horizontally */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .spinner {
+    width: 30px; /* Reduced size for mobile screens */
+  }
+}
