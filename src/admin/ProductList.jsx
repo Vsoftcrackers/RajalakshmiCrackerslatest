@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { getApps, initializeApp } from "firebase/app"; // Initialize Firebase
 import { useNavigate } from "react-router-dom";
+import "./Products.css";
 
 // Firebase config
 const firebaseConfig = {
@@ -11,7 +12,7 @@ const firebaseConfig = {
   storageBucket: "crackers-shop-1ccee.firebasestorage.app",
   messagingSenderId: "530523718936",
   appId: "1:530523718936:web:fa404d5ae610d804e30a6d",
-  measurementId: "G-8JB07Y4M5J"
+  measurementId: "G-8JB07Y4M5J",
 };
 
 // Initialize Firebase only if it's not initialized already
@@ -76,53 +77,78 @@ const ProductList = () => {
   };
 
   const calculateGrandTotal = () => {
-    return selectedProducts.reduce((total, product) => total + (product.qty * product.price), 0).toFixed(2);
+    return selectedProducts
+      .reduce((total, product) => total + (product.qty * product.price), 0)
+      .toFixed(2);
   };
 
   const handleCheckout = () => {
     navigate("/checkout", { state: { selectedProducts } });
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return <div className="product-list-loading">Loading...</div>;
+  if (error) return <div className="product-list-error">{error}</div>;
 
   return (
-    <div>
-      <h2>Product List</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Product Name</th>
-            <th>Content</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.productName}</td>
-              <td>{product.content}</td>
-              <td>${product.price.toFixed(2)}</td>
-              <td>
-                <button onClick={() => handleQuantityChange(product.id, -1)} disabled={product.qty <= 0}>-</button>
-                {product.qty}
-                <button onClick={() => handleQuantityChange(product.id, 1)}>+</button>
-              </td>
-              <td>${(product.qty * product.price).toFixed(2)}</td>
-              <td>
-                <button onClick={() => handleAddToCheckout(product)}>Add to Checkout</button>
-              </td>
+    <div className="product-list-container">
+      <h2 className="product-list-title">Product List</h2>
+      <div className="product-table-container">
+        <table className="product-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Content</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {products.map((product) => (
+              <tr key={product.id}>
+                <td>{product.productName}</td>
+                <td>{product.content}</td>
+                <td>₹{product.price.toFixed(2)}</td> {/* Change dollar symbol to rupee symbol */}
+                <td>
+                  <button
+                    className="product-quantity-button"
+                    onClick={() => handleQuantityChange(product.id, -1)}
+                    disabled={product.qty <= 0}
+                  >
+                    -
+                  </button>
+                  {product.qty}
+                  <button
+                    className="product-quantity-button"
+                    onClick={() => handleQuantityChange(product.id, 1)}
+                  >
+                    +
+                  </button>
+                </td>
+                <td>₹{(product.qty * product.price).toFixed(2)}</td> {/* Change dollar symbol to rupee symbol */}
+                <td>
+                  <button
+                    className="add-to-checkout-button"
+                    onClick={() => handleAddToCheckout(product)}
+                  >
+                    Add to Checkout
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-      <div>
-        <h3>Grand Total: ${calculateGrandTotal()}</h3>
-        <button onClick={handleCheckout}>Proceed to Checkout</button>
+      <div className="grand-total-container">
+        <h3 className="grand-total-text">Grand Total: ₹{calculateGrandTotal()}</h3> {/* Change dollar symbol to rupee symbol */}
+        <button
+          className="checkout-button"
+          onClick={handleCheckout}
+        >
+          Proceed to Checkout
+        </button>
       </div>
     </div>
   );

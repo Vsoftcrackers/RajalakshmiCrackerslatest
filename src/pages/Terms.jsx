@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Marquee from "../components/Marquee";
 import Header from "../components/Header";
-import HeaderTwo from "../components/HeaderTwo";
-import GoldHero from "../components/GoldHero";
-import Gold from "../components/Gold";
-import Footer from "../components/Footer";
-import CustomBottomNavigation from "../components/BottomNavbar"; // Make sure this path is correct
 
-import GoldBack from "../components/GoldBack";
+
+import Footer from "../components/Footer";
+
+
+import CustomBottomNavigation from "../components/BottomNavbar"; // Ensure this path is correct
+import AboutBack from "../components/AboutBack";
 import Sidebar from "../components/Sidebar"; // Ensure Sidebar is imported
 import UpArrow from "./UpArrow";
-const CollectionPage = () => {
+
+const Terms= () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   // Hook to update state on window resize
@@ -28,20 +29,15 @@ const CollectionPage = () => {
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="AboutUs-container">
       <Marquee />
       <Header />
-      {isMobile ? <Sidebar /> : <HeaderTwo />}
+      {isMobile && <Sidebar /> }
+      <AboutBack />
+ 
 
-      
-      {isMobile ? (
-        <>
+     
 
-        </>
-      ) : null}
-      <GoldHero />
-      <GoldBack/>
-      <Gold />
       <UpArrow/>
       <Footer />
       {/* Display the bottom navigation only if it's a mobile screen */}
@@ -50,4 +46,4 @@ const CollectionPage = () => {
   );
 };
 
-export default CollectionPage;
+export default Terms;

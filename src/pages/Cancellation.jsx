@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Marquee from "../components/Marquee";
 import Header from "../components/Header";
-import DailyHero from "../components/DailyHero";
-import HeaderTwo from "../components/HeaderTwo";
-import DailyContent from "../components/DailyContent";
-import CustomBottomNavigation from "../components/BottomNavbar";
+
+
 import Footer from "../components/Footer";
-import DigiGoldBack from "../components/DigiGoldBack";
+
+
+import CustomBottomNavigation from "../components/BottomNavbar"; // Ensure this path is correct
+import AboutBack from "../components/AboutBack";
 import Sidebar from "../components/Sidebar"; // Ensure Sidebar is imported
-import DailyBack from "../components/DailyBack";
 import UpArrow from "./UpArrow";
-const  DailyCollection = () => {
+
+const Cancellation = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  // Hook to update state on window resize
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -20,23 +22,26 @@ const  DailyCollection = () => {
 
     window.addEventListener("resize", handleResize);
 
+    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="AboutUs-container">
       <Marquee />
       <Header />
-  
+      {isMobile && <Sidebar /> }
+      <AboutBack />
+ 
+
+      <UpArrow/>
       <Footer />
-
+      {/* Display the bottom navigation only if it's a mobile screen */}
       {isMobile && <CustomBottomNavigation />}
-
-   
     </div>
   );
 };
 
-export default DailyCollection;
+export default Cancellation;

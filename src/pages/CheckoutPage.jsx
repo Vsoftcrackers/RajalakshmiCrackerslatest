@@ -4,15 +4,14 @@ import Header from "../components/Header";
 
 
 import Footer from "../components/Footer";
-import Abouthero from "../components/Abouthero";
+import Checkout from "../admin/Checkout";
 
-import GridLayout from "../components/GridLayout";
 import CustomBottomNavigation from "../components/BottomNavbar"; // Ensure this path is correct
 import AboutBack from "../components/AboutBack";
 import Sidebar from "../components/Sidebar"; // Ensure Sidebar is imported
 import UpArrow from "./UpArrow";
 
-const AboutUs = () => {
+const CheckOutPage= () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   // Hook to update state on window resize
@@ -36,7 +35,7 @@ const AboutUs = () => {
       {isMobile && <Sidebar /> }
       <AboutBack />
  
-      <Abouthero />
+      <Checkout />
      
 
       <UpArrow/>
@@ -47,4 +46,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default CheckOutPage;

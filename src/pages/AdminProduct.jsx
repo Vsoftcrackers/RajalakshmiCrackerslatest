@@ -4,15 +4,17 @@ import Header from "../components/Header";
 
 
 import Footer from "../components/Footer";
-import Abouthero from "../components/Abouthero";
 
-import GridLayout from "../components/GridLayout";
+
+
 import CustomBottomNavigation from "../components/BottomNavbar"; // Ensure this path is correct
 import AboutBack from "../components/AboutBack";
 import Sidebar from "../components/Sidebar"; // Ensure Sidebar is imported
 import UpArrow from "./UpArrow";
+import ProductsUpload from "../admin/ProductsUpload";
 
-const AboutUs = () => {
+
+const AdminProduct = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   // Hook to update state on window resize
@@ -36,7 +38,7 @@ const AboutUs = () => {
       {isMobile && <Sidebar /> }
       <AboutBack />
  
-      <Abouthero />
+  <ProductsUpload/>
      
 
       <UpArrow/>
@@ -47,4 +49,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AdminProduct;

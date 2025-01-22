@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import Marquee from "../components/Marquee";
 import Header from "../components/Header";
 
-
+import ProductList from "../admin/ProductList";
 import Footer from "../components/Footer";
-import Abouthero from "../components/Abouthero";
 
-import GridLayout from "../components/GridLayout";
 import CustomBottomNavigation from "../components/BottomNavbar"; // Ensure this path is correct
 import AboutBack from "../components/AboutBack";
 import Sidebar from "../components/Sidebar"; // Ensure Sidebar is imported
 import UpArrow from "./UpArrow";
 
-const AboutUs = () => {
+const UserProducts = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   // Hook to update state on window resize
@@ -36,8 +34,7 @@ const AboutUs = () => {
       {isMobile && <Sidebar /> }
       <AboutBack />
  
-      <Abouthero />
-     
+    <ProductList/>
 
       <UpArrow/>
       <Footer />
@@ -47,4 +44,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default UserProducts;

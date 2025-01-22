@@ -4,23 +4,20 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 
 import Enquiry from "./pages/Enquiry";
-import CollectionPage from "./pages/Terms";
-import DiamondPage from "./pages/DiamondPage";
-
-import DigiGold from "./pages/DigiGold";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import Cancellation from "./pages/Cancellation";
 import Spinner from "./pages/Spinner"; // Import the Spinner component
 import AOS from "aos";
 import "aos/dist/aos.css";
-import SchemesPage from "./pages/SchemesPage";
-import FuturePlus from "./pages/FuturePlus";
-import FutureGold from "./pages/FutureGold";
-import FlexiGold from "./pages/FlexiGold";
+
 import ScrollToTop from "./pages/ScrollToTop";
-import  ProductList from "./admin/ProductList";
-import AdminProducts from "./admin/AdminProducts";
-import MKMadminlogin from "./admin/MKMadminlogin";
-import Checkout from "./admin/Checkout";
-import OrdersList from "./admin/OrdersList";
+import  UserProducts from "./pages/Products";
+import AdminProduct from "./pages/AdminProduct";
+import Adminlogin from "./admin/Adminlogin";
+import CheckoutPage from "./pages/CheckoutPage";
+
+import AdminOrders from "./pages/AdminOrders";
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -50,20 +47,17 @@ function App() {
         
           <Route path="/enquiry" element={<Enquiry />} />
    
-          <Route path="/diamond-jewellery" element={<DiamondPage />} />
-
-          <Route path="/schemes" element={<SchemesPage/>} />
-          <Route path="/digigold" element={<DigiGold />} />
-          <Route path="/futureplus" element={<FuturePlus/>} />
-          <Route path="/futuregold" element={<FutureGold/>} />
-          <Route path="/flexigold" element={<FlexiGold/>} />
-        
-          <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/terms" element={<Terms/>}/>
           
-          <Route path="/adminlogin" element={<MKMadminlogin/>}/>
-          <Route path="/adminproducts" element={<AdminProducts/>}/>
-          <Route path="/products" element={<ProductList/>}/>
-          <Route path="/orders" element={<OrdersList/>}/>
+          <Route path="/cancellationpolicy" element={<Cancellation/>}/> 
+          <Route path="/privacy" element={<Privacy/>}/>
+        
+          <Route path="/checkout" element={<CheckoutPage/>}/>
+          
+          <Route path="/adminlogin" element={<Adminlogin/>}/>
+          <Route path="/adminproducts" element={<AdminProduct/>}/>
+          <Route path="/products" element={<UserProducts/>}/>
+          <Route path="/orders" element={<AdminOrders/>}/>
         </Routes>
       )}
     </Router>

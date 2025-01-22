@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react"; // Make sure useState and useEffect are imported
+import React, { useEffect, useState } from "react";
 import Marquee from "../components/Marquee";
 import Header from "../components/Header";
-import HeaderTwo from "../components/HeaderTwo";
-import CustomBottomNavigation from "../components/BottomNavbar";
+
+
 import Footer from "../components/Footer";
-import MainContact from "../components/MainContact";
-import Contacthero from "../components/Contacthero";
-import Reels from "../components/Reels";
-import ContactBack from "../components/ContactBack";
-const ContactUs = () => {
+import Abouthero from "../components/Abouthero";
+
+import CustomBottomNavigation from "../components/BottomNavbar"; // Ensure this path is correct
+import AboutBack from "../components/AboutBack";
+import Sidebar from "../components/Sidebar"; // Ensure Sidebar is imported
+import UpArrow from "./UpArrow";
+
+const Privacy = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   // Hook to update state on window resize
@@ -26,15 +29,15 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="AboutUs-container">
       <Marquee />
       <Header />
-      <HeaderTwo />
-      
-      <Contacthero/>
-      <ContactBack/>
-      <MainContact />
-      <Reels/>
+      {isMobile && <Sidebar /> }
+      <AboutBack />
+
+     
+
+      <UpArrow/>
       <Footer />
       {/* Display the bottom navigation only if it's a mobile screen */}
       {isMobile && <CustomBottomNavigation />}
@@ -42,4 +45,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Privacy;
