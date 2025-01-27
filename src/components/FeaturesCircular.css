@@ -1,0 +1,149 @@
+.features-circular-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 10px auto;
+  gap: 30px;
+  padding: 5px;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  scroll-behavior: smooth; /* Smooth scrolling */
+  scrollbar-width: thin;
+  scrollbar-color: white transparent; /* Change scrollbar color */
+}
+
+.features-circular-container::-webkit-scrollbar {
+  height: 8px; /* Adjust height for horizontal scrollbar */
+}
+
+.features-circular-container::-webkit-scrollbar-thumb {
+  background-color: #c00e12; /* Thumb color */
+  border-radius: 4px; /* Optional for rounded corners */
+}
+
+.features-circular-container::-webkit-scrollbar-track {
+  background-color: transparent; /* Track color */
+}
+
+.orb-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  text-decoration: none;
+}
+
+.orb {
+  --size: 90px;
+  --color: #c00e12; /* Primary bright red color */
+  --lighter-color: #9e1920; /* Lighter red */
+  --darker-color: #8c1f28; /* Darker red */
+  --highlight-color: rgba(255, 255, 255, 0.4); /* White highlight for shine effect */
+  --blur: 30px; /* Slight blur for a soft glow */
+  --spread: 10px; /* More spread for shinier effect */
+  --angle: -90deg;
+  --border: 5px;
+
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle, var(--darker-color) 35%, transparent 70%) center,
+    radial-gradient(circle, var(--lighter-color) 40%, transparent 70%) center,
+    radial-gradient(var(--color), var(--color)) no-repeat 50% 50% / 50% 50%,
+    linear-gradient(var(--color), var(--color)) padding-box,
+    conic-gradient(from var(--angle) at 50% 50%, var(--lighter-color) 0 72deg, var(--darker-color) 100deg 180deg, transparent 288deg, var(--lighter-color)) border-box,
+    radial-gradient(farthest-corner at 50% 50%, var(--highlight-color) 40%, transparent 100%) border-box;
+
+  background-blend-mode: normal, normal, normal, normal, normal, normal;
+  border: var(--border) solid transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: 5s linear infinite change-color, 5s linear infinite orb, 3s linear infinite shiny-move;
+}
+
+/* Animation for moving shiny highlight */
+@keyframes shiny-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Keyframes for shiny red effect */
+@keyframes change-color {
+  0% { --color: #c00e12; }
+  100% { --color: #9e1920; } /* Transition to lighter red for a shine effect */
+}
+
+@keyframes orb {
+  0% { --angle: -90deg; --blur: 40px; --spread: 10px; }
+  100% { --angle: 270deg; }
+}
+
+.orb-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.orb-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+  color: #333;
+  font-size: 0.9rem;
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Ensure proper wrapping for long words */
+  max-width: 100px; /* Limit label width */
+  margin: 0 auto; /* Center align text */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .orb {
+    --size: 90px; /* Reduce size of the orb for mobile view */
+  }
+
+  /* Add margin to the first orb and its label */
+  .orb-wrapper:first-child {
+    margin-left: 80px; /* Ensure both the circle and label align */
+  }
+  .orb-label {
+    font-size: 0.8rem; /* Slightly smaller font size for mobile */
+    max-width: 80px; /* Reduce maximum width */
+  }
+
+  .features-circular-container {
+    margin: 5px auto;
+    gap: 10px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .orb {
+    --size:  70px; /* Further reduce size on smaller screens */
+  }
+  .orb-label {
+    font-size: 0.75rem; /* Further reduce font size on smaller screens */
+    max-width: 70px; /* Adjust maximum width for small screens */
+  }
+
+  /* Add margin to the first orb and its label for smaller screens */
+  .orb-wrapper:first-child {
+    margin-left: 80px; /* Ensure both the circle and label align */
+  }
+}

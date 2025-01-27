@@ -1,0 +1,127 @@
+
+  .orders-list-container {
+    padding: 20px;
+  }
+  
+  .orders-list-heading {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+  }
+  
+  /* Table Styling */
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-table th,
+  .orders-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .orders-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .orders-table td {
+    font-size: 14px;
+  }
+  
+  .orders-table td ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .orders-table td select,
+  .orders-table td input,
+  .orders-table td button {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .orders-table button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .orders-table button:hover {
+    background-color: #45a049;
+  }
+  
+  /* DatePicker */
+  .react-datepicker__input-container {
+    width: 100%;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .orders-table {
+      font-size: 12px;
+      margin: 10px;
+    }
+  
+    .orders-table th,
+    .orders-table td {
+      padding: 10px;
+    }
+  
+    .orders-table td input,
+    .orders-table td select,
+    .orders-table td button {
+      font-size: 12px;
+    }
+  
+    .orders-table td button {
+      padding: 6px 8px;
+    }
+  
+    .orders-table td select,
+    .orders-table td input {
+      width: 100%;
+    }
+  
+    /* Stacking items vertically for small screens */
+    .orders-table td {
+      display: block;
+      width: 100%;
+      text-align: right;
+    }
+  
+    .orders-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-align: left;
+      display: block;
+    }
+  }
+  
+  /* Additional styling for buttons and alerts */
+  .confirmation-alert {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  
+  .confirmation-alert.success {
+    background-color: #4CAF50;
+  }
+  
+  

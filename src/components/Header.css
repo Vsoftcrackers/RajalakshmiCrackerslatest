@@ -1,0 +1,69 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Playfairdisplay", sans-serif; /* Apply Poppins globally */
+  padding: 5px ;
+  border-bottom: 1px solid #c67e00; /* Adds a border at the top */
+  background-color: #fff;
+ /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.9);  Adjusted shadow */
+  flex-wrap: wrap;
+  gap: 15px; /* Reduced gap */
+  height: 70px; /* Set a fixed height */
+  position: relative;
+}
+
+/* Logo */
+.header .logo-container img {
+  width: 40px; /* Reduced logo size */
+  height: auto;
+  padding: 5px;
+}
+.headlinks{
+  width: 70%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
+}
+.links{
+  text-decoration: none;
+  color: #9f1920;
+  font-size: large;
+  font-weight: bold;
+}
+
+@keyframes blink-multicolor {
+  0% { color: red; }
+  25% { color: blue; }
+  50% { color: green; }
+  75% { color: gold; }
+  100% { color: purple; }
+}
+
+.blink{
+  animation: blink-multicolor 1s infinite;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 2px;
+    justify-content:center; /* Center content horizontally */
+    
+ 
+  }
+  .headlinks{
+    display: none;
+  }
+ 
+  .logo-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+
+
+
