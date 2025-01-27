@@ -1,0 +1,66 @@
+/* Wrapper to prevent vertical overflow */
+.new-arrivals-wrapper {
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-y: hidden; /* Prevent vertical overflow */
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main New Arrivals Section */
+.new-arrivals {
+  text-align: center;
+  background: var(--bg);
+  padding: 20px;
+  margin: auto;
+  max-width: 1250px;
+  box-sizing: border-box;
+}
+
+.new-arrivals h1 {
+  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.image-caption {
+  font-size: 1rem;
+  color: var(--text);
+  margin-top: 3px;
+  text-align: flex-start;
+  font-weight: bold;
+  background-color: #c67e00;
+  padding: 5px;
+}
+
+/* Ensure card and slider content fits within the parent container */
+.slider .card {
+  background: var(--card-bg);
+  border: var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.slider .card .card-image {
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+.slider .card:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-height: 768px) {
+  .new-arrivals {
+    padding: 10px;
+  }
+
+  .slider .card .card-image {
+    height: 150px;
+  }
+}

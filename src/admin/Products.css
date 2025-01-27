@@ -1,0 +1,133 @@
+/* Main container for the product list */
+.product-list-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Heading styles */
+.product-list-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Table container */
+.product-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+/* Table styles */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.product-table th, .product-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.product-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.product-table td button {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+.product-table td button:hover {
+  background-color: #e0e0e0;
+}
+
+.product-table td button:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+/* Grand total section */
+.grand-total-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.grand-total-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.grand-total-container button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.grand-total-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .product-list-container {
+    padding: 10px;
+  }
+
+  .product-table th, .product-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .product-table td button {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .grand-total-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .grand-total-container button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .product-table {
+    font-size: 12px;
+  }
+
+  .product-table th, .product-table td {
+    padding: 6px;
+  }
+
+  .product-table td button {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .grand-total-container h3 {
+    font-size: 1.1rem;
+  }
+
+  .grand-total-container button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

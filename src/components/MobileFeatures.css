@@ -1,0 +1,125 @@
+/* Mobile Features Section */
+.mobile-features-section {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #fff;
+}
+
+/* Main heading and subheading styles */
+.mobile-main-heading {
+  font-size: 1.4rem;  /* Slightly smaller for mobile */
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;  /* Reduced margin */
+}
+
+.mobile-sub-heading {
+  font-size: 0.9rem;  /* Adjusted font size */
+  color: #555;
+  text-align: center;
+  margin-bottom: 15px;  /* Reduced margin */
+}
+
+/* Features Cards Section */
+.mobile-features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Reduced gap */
+  padding-bottom: 15px; /* Reduced bottom padding */
+}
+
+.mobile-features-card {
+  flex: 1 1 180px; /* Reduced card width */
+  max-width: 220px; /* Maximum width for mobile cards */
+  padding: 10px; /* Reduced padding */
+  border: 1px solid #9f1920;
+  border-radius: 8px; /* Slightly smaller border radius */
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.mobile-features-card:hover {
+  transform: scale(1.05);
+}
+
+/* Card Image */
+.mobile-features-card-image {
+  width: 100%;
+  max-width: 70px; /* Even smaller image size for mobile */
+  margin: 0 auto 12px; /* Reduced margin */
+}
+
+/* Card Title */
+.mobile-features-card-title {
+  font-size: 0.9rem;  /* Smaller font size */
+  font-weight: bold;
+  color: #313131;
+  margin-bottom: 8px; /* Reduced margin */
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Card Description */
+.mobile-features-card-description {
+  font-size: 0.8rem;  /* Smaller description font size */
+  color: #2c2b2b;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Responsive Styles for Mobile View */
+@media (max-width: 768px) {
+  .mobile-features-card {
+    flex: 1 1 160px; /* Reduced card width for even smaller screens */
+    max-width: 220px; /* Adjusted max width */
+    padding: 8px; /* Reduced padding */
+  }
+
+  .mobile-features-card-image {
+    max-width: 60px; /* Smaller image size */
+  }
+
+  .mobile-features-card-title {
+    font-size: 0.8rem; /* Even smaller font size */
+  }
+
+  .mobile-features-card-description {
+    font-size: 0.7rem; /* Smaller description font size */
+  }
+
+  .mobile-main-heading {
+    font-size: 1.1rem; /* Adjusted heading size for mobile */
+  }
+
+  .mobile-sub-heading {
+    font-size: 0.8rem; /* Adjusted sub-heading size */
+  }
+}
+
+/* Responsive Styles for Large Screen (Desktop) */
+@media (min-width: 1024px) {
+  .mobile-features-container {
+    justify-content: space-between;
+  }
+
+  .mobile-features-card {
+    flex: 1 1 210px;
+    max-width: 280px;  /* Slightly wider for larger screens */
+  }
+
+  .mobile-features-card-image {
+    max-width: 85px; /* Slightly larger image for desktop */
+  }
+
+  .mobile-features-card-title {
+    font-size: 1.1rem;
+  }
+
+  .mobile-features-card-description {
+    font-size: 0.9rem;
+  }
+}

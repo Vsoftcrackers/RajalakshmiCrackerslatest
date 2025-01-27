@@ -1,0 +1,56 @@
+.terms-heading {
+  text-align: center; /* Centers the heading horizontally */
+  margin-top: 30px; /* Adds some space above the heading */
+}
+
+.terms-heading .main-heading {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px; /* Space between the text and the underline */
+  animation: shine 2s linear infinite; /* Animation to create the shining effect */
+  background: linear-gradient(90deg, #670404,#ffff95, #910c00); /* Your custom gradient */
+  -webkit-background-clip: text;
+  background-size: 200%; /* Size of the gradient to create the animation effect */
+  color: transparent; /* Make the text transparent for the background-clip to show */
+  font-weight: bold; /* Optional, for a bolder effect */
+}
+
+.terms-heading .main-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #e61a1a; /* Color of the underline */
+  border-bottom-right-radius: 10px; /* Rounded corners on the right side */
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.terms-content {
+  padding: 20px;
+}
+
+.terms-content p {
+  margin-bottom: 30px;
+  line-height: 1.9;
+  font-family: sans-serif;
+}
+
+.terms-content ul {
+  margin-left: 80px;
+ 
+}
+
+.terms-content ul li {
+  margin-bottom: 50px;
+
+}

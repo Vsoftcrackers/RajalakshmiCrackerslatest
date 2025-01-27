@@ -1,0 +1,88 @@
+/* Universal Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Terms Heading Styles */
+.terms-section {
+  text-align: center; /* Centers the heading horizontally */
+  margin-top: 30px; /* Adds some space above the heading */
+}
+
+.terms-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333; /* Add color for readability */
+}
+
+.terms-section h2 {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px; /* Space between the text and the underline */
+  animation: shine 2s linear infinite; /* Animation to create the shining effect */
+  background: linear-gradient(90deg, #670404, #ffff95, #910c00); /* Your custom gradient */
+  -webkit-background-clip: text;
+  background-size: 200%; /* Size of the gradient to create the animation effect */
+  color: transparent; /* Make the text transparent for the background-clip to show */
+  font-weight: bold; /* Optional, for a bolder effect */
+}
+
+
+/* Shine Animation */
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* Terms Content Styles */
+.terms-section {
+  padding: 20px;
+}
+
+.terms-section p {
+  margin-bottom: 30px;
+  line-height: 1.9;
+  font-family: sans-serif;
+}
+
+.terms-section ul {
+  margin-left: 80px;
+}
+
+.terms-section ul li {
+  margin-bottom: 50px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .terms-section h2 {
+    font-size: 24px; /* Reduce the size of headings on mobile */
+  }
+
+  .terms-section ul {
+    margin-left: 20px; /* Reduce left margin on mobile */
+  }
+
+  .terms-section ul li {
+    margin-bottom: 20px; /* Adjust bottom margin for mobile */
+  }
+
+  .terms-section p {
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+
+  .terms-section {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+}
+
+/* Ensure the container is well-spaced */
+.CancellationAndRefund-container {
+  padding: 20px;
+}
