@@ -35,7 +35,7 @@ const Terms = () => {
       {/* Add the heading here */}
       <div className="terms-heading">
       <h1 className="main-heading" style={{textTransform:"capitalize"}}>Terms and Conditions</h1>
-      </div>
+     </div>
 
       {/* The Terms and Conditions content goes here */}
       <div className="terms-content">
